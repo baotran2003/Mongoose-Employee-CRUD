@@ -4,18 +4,25 @@ const path = require("path");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
+const employeeRoutes = require("./routes/employees");
+
 dotenv.config({ path: "./config.env" });
 
 // Connect MongoDB Database
-mongoose.connect(process.env.DATABASE_LOCAL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-});
+mongoose
+    .connect(process.env.DATABASE_LOCAL)
+    .then(() => {
+        console.log("Connect To MongoDB Successful!");
+    })
+    .catch((err) => {
+        console.error("Connect To MongoDB Fail !:", err);
+    });
 
 app.set("views", path.join(__dirname, "views"));
-app.set("view-engine", "ejs");
+app.set("view engine", "ejs");
 app.use(express.static("public"));
+
+app.use(employeeRoutes);
 
 const port = process.env.PORT;
 app.listen(port, () => {

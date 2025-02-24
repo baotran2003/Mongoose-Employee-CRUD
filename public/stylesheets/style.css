@@ -1,0 +1,98 @@
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #eef2f7; /* Xám nhạt */
+    color: #333;
+}
+
+.navbar {
+    background-color: #6c7ae0; /* Màu xanh pastel */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar .nav-link {
+    color: white !important;
+}
+
+.container {
+    margin-top: 2rem;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #495057;
+    font-weight: bold;
+}
+
+#dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#dataTable th,
+#dataTable td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#dataTable th {
+    background-color: #6c7ae0; /* Màu xanh pastel */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+#dataTable tr:nth-child(even) {
+    background-color: #f8f9fc; /* Màu xám nhạt */
+}
+
+#dataTable tr:hover {
+    background-color: #e2e6ea; /* Hiệu ứng hover nhẹ */
+}
+
+.btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #4c8bf5; /* Xanh nhẹ */
+}
+
+.btn-primary:hover {
+    background-color: #2c6edb; /* Xanh đậm hơn */
+    transform: scale(1.05);
+}
+
+.btn-danger {
+    background-color: #e74c3c; /* Đỏ nhẹ */
+}
+
+.btn-danger:hover {
+    background-color: #c0392b; /* Đỏ đậm hơn */
+    transform: scale(1.05);
+}
+
+.btn-group {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
