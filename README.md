@@ -20,3 +20,5 @@ This is a simple Employee Management System built with Node.js, Express, and Mon
 - **Bootstrap**: A CSS framework for designing responsive web pages.
 - **Connect-flash**: A middleware for displaying flash messages.
 - **Method-override**: A middleware to override HTTP methods.
+- ![image](https://github.com/user-attachments/assets/0d820589-3f91-4a9c-a1be-8cdc412236ca)
+
