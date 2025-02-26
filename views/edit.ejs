@@ -19,20 +19,20 @@
         <%- include('partials/header') -%>
         <div class="container mt-5 w-50">
             <h2 class="mb-4">Update Employee Data</h2>
-            <form action="/edit/employee.id?_method=PUT" method="POST">
+            <form action="/edit/<%= employee.id%>?_method=PUT" method="POST">
                 <input type="hidden" name="_method" value="PUT" />
-                <input type="text" value="John Doe" name="name" class="form-control my-3" placeholder="Employee Name" />
+                <input type="text" value="<%= employee.name %>" name="name" class="form-control my-3" placeholder="Employee Name" />
                 <input
                     type="text"
                     value="Manager"
-                    name="designation"
+                    name="<%= employee.designation %>"
                     class="form-control my-3"
                     placeholder="Employee Designation"
                 />
                 <input
                     type="text"
                     value="12000"
-                    name="salary"
+                    name="<%= employee.salary %>"
                     class="form-control my-3"
                     placeholder="Employee Salary"
                 />

@@ -34,7 +34,7 @@
                             <td><%= employee.salary %></td>
                             <td>
                                 <div class="btn-group">
-                                    <a class="btn btn-primary" href="/edit/employee.id">Edit</a>
+                                    <a class="btn btn-primary" href="/edit/<%= employee.id %>">Edit</a>
                                     <form action="/delete/employee.id?_method=DELETE" method="POST">
                                         <input type="hidden" name="_method" value="DELETE" />
                                         <button type="submit" class="btn btn-danger">Delete</button>
