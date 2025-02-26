@@ -8,8 +8,8 @@ router.get("/", (req, res) => {
             res.render("index", { employees: employees });
         })
         .catch((err) => {
-            console.log(err);
-            res.status(500).send("Internal Server Error"); // Trả về phản hồi lỗi cho client
+            req.flash("error_msg", "Error: " + err);
+            res.redirect("/");
         });
 });
 
@@ -31,8 +31,8 @@ router.get("/employee", (req, res) => {
             res.render("search", { employee: employee });
         })
         .catch((err) => {
-            console.log(err);
-            res.status(500).send("Internal Server Error"); // Trả về phản hồi lỗi cho client
+            req.flash("error_msg", "Employee search failed: " + err);
+            res.redirect("/");
         });
 });
 
@@ -46,15 +46,16 @@ router.post("/employee/new", (req, res) => {
 
     Employee.create(newEmployee)
         .then((employee) => {
+            req.flash("success_msg", "Employee data added to database successfully.");
             res.redirect("/");
         })
         .catch((err) => {
-            console.log(err);
-            res.status(500).send("Internal Server Error"); // Trả về phản hồi lỗi cho client
+            req.flash("error_msg", "Employee save failed: " + err);
+            res.redirect("/");
         });
 });
 
-// updated Employee
+// Search Employee
 router.get("/edit/:id", (req, res) => {
     let searchQuery = { _id: req.params.id };
     Employee.findOne(searchQuery)
@@ -63,7 +64,8 @@ router.get("/edit/:id", (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.status(500).send("Internal Server Error"); // Trả về phản hồi lỗi cho client
+            req.flash("error_msg", "Employee edit failed: " + err);
+            res.redirect("/");
         });
 });
 
@@ -79,11 +81,12 @@ router.put("/edit/:id", (req, res) => {
         },
     })
         .then((employee) => {
+            req.flash("success_msg", "Employee updated successfully.");
             res.redirect("/");
         })
         .catch((err) => {
-            console.log(err);
-            res.status(500).send("Internal Server Error"); // Trả về phản hồi lỗi cho client
+            req.flash("error_msg", "Employee update failed: " + err);
+            res.redirect("/");
         });
 });
 
@@ -93,11 +96,12 @@ router.delete("/delete/:id", (req, res) => {
 
     Employee.deleteOne(searchQuery)
         .then((employee) => {
+            req.flash("success_msg", "Employee deleted successfully.");
             res.redirect("/");
         })
         .catch((err) => {
-            console.log(err);
-            res.status(500).send("Internal Server Error"); // Trả về phản hồi lỗi cho client
+            req.flash("error_msg", "Employee deleted failed: " + err);
+            res.redirect("/");
         });
 });
 module.exports = router;

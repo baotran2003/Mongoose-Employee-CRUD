@@ -22,7 +22,7 @@
                 <input type="text" name="name" class="form-control" placeholder="Employee Name" />
                 <button type="submit" class="btn btn-danger btn-block mt-3">Search in Database</button>
             </form>
-            <div>
+            <>
                 <% if(employee) { %>
                 <h4 class="text-danger my-4">Search Results:</h4>
                 <table class="table table-bordered" width="100%" cellspacing="0">
@@ -41,9 +41,9 @@
                         </tr>
                     </tbody>
                 </table>
+            <% } else { %>
+                <div class="alert alert-danger">Employee doesn't exist with this name.</div>
             <% } %>
-            </div>
-            <div class="alert alert-danger mt-4">Employee does not exist with this name.</div>
         </div>
         <%- include('partials/footer') -%>
 
