@@ -13,8 +13,27 @@ router.get("/", (req, res) => {
         });
 });
 
+// create new employee
 router.get("/employee/new", (req, res) => {
     res.render("new");
+});
+
+// search employee
+router.get("/employee/search", (req, res) => {
+    res.render("search", { employee: "" });
+});
+
+router.get("/employee", (req, res) => {
+    let searchQuery = { name: req.query.name };
+
+    Employee.findOne(searchQuery)
+        .then((employee) => {
+            res.render("search", { employee: employee });
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(500).send("Internal Server Error"); // Trả về phản hồi lỗi cho client
+        });
 });
 
 router.post("/employee/new", (req, res) => {
