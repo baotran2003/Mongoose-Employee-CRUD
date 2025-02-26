@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <style>
+            .container {
+                margin-top: 5rem;
+                width: 50%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <%- include('partials/header') -%>
+        <div class="container mt-5 w-50">
+            <h2 class="mb-4">Update Employee Data</h2>
+            <form action="/edit/employee.id?_method=PUT" method="POST">
+                <input type="hidden" name="_method" value="PUT" />
+                <input type="text" value="John Doe" name="name" class="form-control my-3" placeholder="Employee Name" />
+                <input
+                    type="text"
+                    value="Manager"
+                    name="designation"
+                    class="form-control my-3"
+                    placeholder="Employee Designation"
+                />
+                <input
+                    type="text"
+                    value="12000"
+                    name="salary"
+                    class="form-control my-3"
+                    placeholder="Employee Salary"
+                />
+                <button type="submit" class="btn btn-danger btn-block mt-3">Update Employee</button>
+            </form>
+        </div>
+        <%- include('partials/footer') -%>
+
+        <!-- Add your JS scripts here -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
