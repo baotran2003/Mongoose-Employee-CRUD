@@ -88,4 +88,16 @@ router.put("/edit/:id", (req, res) => {
 });
 
 // delete Employee
+router.delete("/delete/:id", (req, res) => {
+    let searchQuery = { _id: req.params.id };
+
+    Employee.deleteOne(searchQuery)
+        .then((employee) => {
+            res.redirect("/");
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(500).send("Internal Server Error"); // Trả về phản hồi lỗi cho client
+        });
+});
 module.exports = router;
