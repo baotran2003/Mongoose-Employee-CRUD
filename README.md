@@ -21,4 +21,10 @@ This is a simple Employee Management System built with Node.js, Express, and Mon
 - **Connect-flash**: A middleware for displaying flash messages.
 - **Method-override**: A middleware to override HTTP methods.
 - ![image](https://github.com/user-attachments/assets/0d820589-3f91-4a9c-a1be-8cdc412236ca)
+- ![image](https://github.com/user-attachments/assets/f42c4206-26cb-41c8-8085-9866e4acb289)
+- ![image](https://github.com/user-attachments/assets/6026f6a3-79f5-43b5-ba61-20ebcd21b29b)
+- ![image](https://github.com/user-attachments/assets/134b01a8-3778-4f50-aceb-fe29b021fcb0)
+
+
+
 
